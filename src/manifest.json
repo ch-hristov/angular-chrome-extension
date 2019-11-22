@@ -3,15 +3,25 @@
     "version": "1.0",
     "description": "Build an Extension with Angular",
     "manifest_version": 2,
+    "file_browser_handlers": [
+        {
+          "id": "upload",
+          "default_title": "Save to Gallery",
+          "file_filters": [
+            "filesystem:*.pdf"
+          ]
+        }
+      ],
     "permissions": [
         "activeTab",
         "webNavigation",
-        "storage"
+        "storage",
+        "fileBrowserHandler"
     ],
     "background": {
         "scripts": [
-            "background.js",
-            "runtime.js"
+            "background-es5.js",
+            "runtime-es5.js"
         ]
     },
     "page_action": {
